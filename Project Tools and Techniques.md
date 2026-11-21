@@ -1,6 +1,6 @@
-## **Project Tools and Techniques**
+# **Project Tools and Techniques**
 
-### **Project Management**
+## **Project Management**
 
 * **GitHub:** hosts the code (the `dawn-care` organization), pull requests and code reviews.
 * **GitHub Projects:** the task board. Tickets are tasks or bugs, labeled by focus area.
@@ -9,7 +9,7 @@
 * **Discord:** day-to-day team communication, plus bots that post pull request activity.
 * **Email:** communication with the sponsor and stakeholders.
 
-### **Development Tools**
+## **Development Tools**
 
 * **VS Code:** the code editor.
 * **draw.io:** diagrams, such as the domain model, stored as files in the Artifacts repo.
@@ -29,7 +29,7 @@
   * Pull request events are forwarded to the team's Discord bots.
 * **AI tools:** help write consistent ticket and pull request descriptions, and help authors review their own changes before opening a pull request.
 
-### **Implementation Tools**
+## **Implementation Tools**
 
 * **Backend:** Go, with the chi router and a REST API.
 * **Database:** PostgreSQL.
