@@ -16,7 +16,7 @@ D.A.W.N. is an orientation tool, inspired by the premise of the movie *Fifty Fir
 
 * **Always-on screen:** the day of the week and the time of day (morning, afternoon, evening) in very large type, a family photo, and small extra widgets the family chooses, such as the weather. At night the screen turns dim and warm.
 * **Playback:** family members record or upload videos, audio and photos and schedule them to play at set times, such as a morning greeting at 8 AM. Content plays full screen, with no tap needed, and the screen returns to the always-on view afterward.
-* **Staff control:** staff will be able to start or stop a clip from their phone, and it begins on the tablet within a few seconds.
+* **Staff control:** staff pick a clip from their phone by the resident's situation (for example, "wants to go home") or by family member, and it begins on the tablet within a few seconds. They can stop it, and afterward rate how it went.
 
 The system is three apps on one backend:
 
@@ -24,11 +24,11 @@ The system is three apps on one backend:
 |---|---|---|
 | Caregiver web app | Family | Sign in, pair a tablet, upload or record media, lay out the screen, schedule playback, and preview what the tablet shows |
 | Carepartner tablet app | Resident | Shows the always-on screen and plays scheduled or staff-started content |
-| Staff app *(in progress)* | Facility staff | Starts and stops content on a resident's tablet from a phone |
+| Staff app | Facility staff | Picks a clip for a resident's situation, starts and stops it on their tablet, and rates how it went |
 
 ### **Current State**
 
-D.A.W.N. is an inherited, working system that this year's team has largely redesigned. The tablet app was rebuilt for an Android tablet, and the family app gained a new UI, email + one-time code authentication, screen layout editor, in-app recording, and a live preview. The beta has not started yet. The team is preparing for it, which includes moving hosting to AWS, running the tablet unattended for several days, and working through a consent and privacy checklist with each facility. St. Ann's Home in Irondequoit, NY is the planned beta site.
+D.A.W.N. is an inherited, working system that this year's team has largely redesigned. The tablet app was rebuilt for an Android tablet, and the family app gained a new UI, email + one-time code authentication, screen layout editor, in-app recording, and a live preview. A new staff app lets floor staff play a clip on a resident's tablet from their phone. The beta has not started yet. The team is preparing for it, which includes moving hosting to AWS, running the tablet unattended for several days, and working through a consent and privacy checklist with each facility. St. Ann's Home in Irondequoit, NY is the planned beta site.
 
 Gerry Garavuso, a retired project manager and 16-year guide for Multidisciplinary Senior Design in KGCOE, is the project sponsor and client, providing domain context and ongoing feedback on requirements. Tim Anderson, a faculty member at St. Ann's, is the team's main contact at the facility; development requests about facility logistics, resident access or scheduling go directly to Tim. Drew Saur, the team's senior product coach, provides process and technical guidance and meets with the team weekly. Ann Marie Cook, CEO of Lifespan, is an external stakeholder who supports the idea and wants to see how D.A.W.N. works in different settings before investing further.
 
@@ -45,7 +45,7 @@ Gerry Garavuso, a retired project manager and 16-year guide for Multidisciplinar
 
 #### **In Scope (this year)**
 
-* **Three-app redesign.** Finish the rebuilt tablet app and caregiver app, and build the staff app with play and stop commands that reach the tablet in real time.
+* **Three-app redesign.** Rebuild the tablet and caregiver apps, and build the staff app, whose play and stop commands reach the tablet in real time.
 * **Feature discovery through rapid prototyping.** Build a small number of candidate features, chosen mainly from sponsor input, as testable prototypes. Speed of iteration matters more than polish.
 * **Beta preparation and launch.** Confirm the participating facilities, complete consent and privacy work (data inventory, privacy notice, keeping resident names out of logs), and run a beta at St. Ann's Home.
 * **Telemetry.** Record what the tablet shows and plays, and how caregivers use their app, enough to evaluate the prototyped features. This is not a general-purpose analytics platform.
@@ -71,7 +71,7 @@ D.A.W.N. is a monorepo with a Go backend and three frontends:
 * **Backend (Go):** one REST API that is the only part of the system talking to the database, file storage and outside services. Postgres stores structured data (accounts, screen layouts, schedules, play records), and MinIO stores the media files. Code is organized by domain in layers (routes, controllers, services, models), which keeps it easy to extend.
 * **Caregiver web app (React + TypeScript + Vite):** caregivers sign in with Google or with a code sent by email. In production, the Go server serves this app and the API from the same address.
 * **Carepartner tablet app (Expo / React Native):** runs on a Samsung Galaxy Tab A9+ (Android). Tablets pair with a caregiver's account through a short code shown on screen rather than a login. Tablets get the app from Expo's build service, and later changes arrive over the air. A web version of the tablet app powers the caregiver's live preview.
-* **Staff app (Expo / React Native):** in progress; it will send play and stop commands to tablets over a WebSocket.
+* **Staff app (Expo / React Native):** runs on staff members' own Android and iOS phones and has no sign-in yet. Its play and stop commands reach the tablet over a WebSocket.
 * **Shared rules:** a small TypeScript folder used by both the caregiver app and the tablet, so the caregiver's preview always matches what the tablet shows (awake hours, screen grid, what is playing).
 
 The whole backend, including the built caregiver app, runs as a single containerized stack (Docker Compose).
@@ -81,7 +81,6 @@ The whole backend, including the built caregiver app, runs as a single container
 #### **Planned Architecture Changes**
 
 * **Hosting:** move from the RIT server to AWS before the beta, with automated deploys from GitHub Actions. After the beta, each facility may get its own AWS account.
-* **Staff commands:** a WebSocket connection so staff play and stop commands reach the tablet within seconds.
 * **Media caching:** the tablet downloads all of a resident's media ahead of time so a staff-started clip starts quickly.
 
 ### **Software & Hardware Requirement Specifications**
