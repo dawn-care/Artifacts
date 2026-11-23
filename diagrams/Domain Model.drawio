@@ -44,13 +44,16 @@
                     <mxGeometry height="27" width="250" y="71" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-14" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=13;" value="&lt;span style=&quot;font-size:10px&quot;&gt;resident&lt;/span&gt;&lt;br&gt;&lt;b&gt;Carepartner&lt;/b&gt;" vertex="1">
-                    <mxGeometry height="104" width="250" x="840" y="300" as="geometry"/>
+                    <mxGeometry height="131" width="250" x="840" y="300" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-15" parent="ov-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" value="name" vertex="1">
                     <mxGeometry height="27" width="250" y="44" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-16" parent="ov-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" value="timezone" vertex="1">
                     <mxGeometry height="27" width="250" y="71" as="geometry"/>
+                </mxCell>
+                <mxCell id="ov-16b" parent="ov-14" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontColor=#666666;fontStyle=2;" value="«planned» photoConsent" vertex="1">
+                    <mxGeometry height="27" width="250" y="98" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-17" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=44;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=#ffffff;fontSize=13;" value="&lt;span style=&quot;font-size:10px&quot;&gt;family&lt;/span&gt;&lt;br&gt;&lt;b&gt;Caregiver&lt;/b&gt;" vertex="1">
                     <mxGeometry height="175" width="250" x="1240" y="300" as="geometry"/>
@@ -85,7 +88,7 @@
                 <mxCell id="ov-27" parent="ov-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" value="role (nurse, activities staff, ...)" vertex="1">
                     <mxGeometry height="44" width="250" y="71" as="geometry"/>
                 </mxCell>
-                <mxCell id="ov-28" parent="ov-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" value="uses the staff app (no account yet)" vertex="1">
+                <mxCell id="ov-28" parent="ov-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" value="uses the staff app; sign-in in progress" vertex="1">
                     <mxGeometry height="44" width="250" y="115" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-29" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;swimlaneFillColor=#ffffff;fontSize=13;" value="&lt;b&gt;Tablet&lt;/b&gt;" vertex="1">
@@ -208,7 +211,7 @@
                 <mxCell id="ov-68" parent="ov-54" style="text;html=1;align=left;verticalAlign=middle;strokeColor=none;fillColor=none;fontSize=12;" value="Read labels in the arrow&#39;s direction (▶ ◀ ▲ ▼)" vertex="1">
                     <mxGeometry height="20" width="310" x="12" y="228" as="geometry"/>
                 </mxCell>
-                <mxCell id="ov-69" edge="1" parent="1" source="ov-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;exitX=0;exitY=0.1257;exitDx=0;exitDy=0;entryX=1;entryY=0.2115;entryDx=0;entryDy=0;" target="ov-14" value="◀ cares for">
+                <mxCell id="ov-69" edge="1" parent="1" source="ov-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;exitX=0;exitY=0.1257;exitDx=0;exitDy=0;entryX=1;entryY=0.1679;entryDx=0;entryDy=0;" target="ov-14" value="◀ cares for">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-70" connectable="0" parent="ov-69" style="edgeLabel;resizable=0;html=1;fontSize=11;labelBackgroundColor=none;align=right;verticalAlign=bottom;" value="0..1" vertex="1">
@@ -234,7 +237,7 @@
                         <mxPoint x="-5" y="-3" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="ov-75" edge="1" parent="1" source="ov-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;dashed=1;dashPattern=6 4;strokeColor=#666666;exitX=0;exitY=0.2115;exitDx=0;exitDy=0;entryX=1;entryY=0.2115;entryDx=0;entryDy=0;" target="ov-11" value="◀ lives at">
+                <mxCell id="ov-75" edge="1" parent="1" source="ov-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;dashed=1;dashPattern=6 4;strokeColor=#666666;exitX=0;exitY=0.1679;exitDx=0;exitDy=0;entryX=1;entryY=0.2115;entryDx=0;entryDy=0;" target="ov-11" value="◀ lives at">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-76" connectable="0" parent="ov-75" style="edgeLabel;resizable=0;html=1;fontSize=11;labelBackgroundColor=none;align=right;verticalAlign=bottom;" value="0..*" vertex="1">
@@ -304,7 +307,7 @@
                         <mxPoint x="5" y="17" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="ov-90" edge="1" parent="1" source="ov-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" target="ov-14" value="is paired with ▶">
+                <mxCell id="ov-90" edge="1" parent="1" source="ov-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=12;labelBackgroundColor=#ffffff;endArrow=none;startArrow=none;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.6351;entryDx=0;entryDy=0;" target="ov-14" value="is paired with ▶">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="ov-91" connectable="0" parent="ov-90" style="edgeLabel;resizable=0;html=1;fontSize=11;labelBackgroundColor=none;align=left;verticalAlign=bottom;" value="0..*" vertex="1">

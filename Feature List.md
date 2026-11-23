@@ -99,7 +99,7 @@ Staff decide when content plays: they tap what's happening, pick a clip, and rat
 | ST-14 | Activities | As staff, 15 minutes before an event I see the list of rooms to bring to it. | Could (later) | Not started |  | FR-24 |
 | ST-15 | Activities | As activities staff, I mark who attended an event, which gives the team an attendance measure. | Could (later) | Not started |  | FR-24 |
 | ST-16 | Activities | As activities staff, I take a photo at an event and check off the residents in it; residents without photo consent can't be checked, and the photo goes to their tablet and family. | Could (later) | Not started |  | FR-24, NFR-2 |
-| ST-18 | Admin | As a facility admin, I set each resident's photo-consent flag. | Must (beta) | Not started |  | FR-25, NFR-2 |
+| ST-18 | Admin | As a facility admin, I set each resident's photo-consent flag. | Could (later) | Not started |  | FR-25, NFR-2 |
 | ST-19 | Play the right clip | As staff, I see and edit a resident's sleeping hours, and can't play anything during them. *The screen is built, but the hours aren't saved to the server yet.* | Should | Partly done |  | FR-22 |
 
 ## **Shared backend**
@@ -107,7 +107,7 @@ Staff decide when content plays: they tap what's happening, pick a clip, and rat
 | ID | Requirement | Priority | Status | Issues | Maps to |
 | :---- | :---- | :---- | :---- | :---- | :---- |
 | SYS-1 | One purpose taxonomy, defined once, shared by clip tags (CG-4), staff situations (ST-3) and request topics (ST-10). *Tags and situations share one list on the server; request topics are a separate list.* | Must (beta) | Partly done |  | FR-10, FR-19 |
-| SYS-2 | Roles and scopes: family sees their own carepartners; aides and nurses play and rate for their unit; activities staff manage events; admins manage staff, consent and uploads. *Only caregiver accounts exist; staff have no sign-in yet.* | Must (beta) | Partly done | [#443](https://github.com/dawn-care/DAWN/issues/443) | FR-18, NFR-3 |
+| SYS-2 | Roles and scopes: family sees their own carepartners; aides and nurses play and rate for their unit; activities staff manage events; admins manage staff and consent. *Only caregiver accounts exist; staff have no sign-in yet.* | Must (beta) | Partly done | [#443](https://github.com/dawn-care/DAWN/issues/443) | FR-18, NFR-3 |
 | SYS-3 | Real-time play and stop commands from the staff app to a tablet, with an acknowledgement back. | Must (beta) | Done | [#286](https://github.com/dawn-care/DAWN/issues/286), [#288](https://github.com/dawn-care/DAWN/issues/288), [#301](https://github.com/dawn-care/DAWN/issues/301) | FR-3, FR-20 |
 | SYS-4 | Clip recommendation by rules: matching tag, then not expired, then right time of day, then most recent; weighted by past ratings. *Clips are ordered by recent ratings, then newest; expiry and time of day aren't used.* | Must (beta) | Partly done |  | FR-19 |
 | SYS-5 | Expired "true until" clips are never recommended or scheduled. | Should | Not started |  | FR-19 |
