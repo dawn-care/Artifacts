@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Our team uses **Deadline-Driven Development**, which is a hybrid of Shape Up and Kanban with some other additional features. We work towards meaningful, often external deadlines (e.g. important demo) instead of fixed cycles or sprint lengths. We start each new iteration with a meeting with our sponsor to decide what needs to be done before the deadline
+Our team uses **Deadline-Driven Development**, which is a hybrid of Shape Up and Kanban with some other additional features. We work towards meaningful, often external deadlines (e.g. important demo) instead of fixed cycles or sprint lengths. We start each new iteration with a meeting with our sponsor to decide what needs to be done before the deadline.
 
 ## **Planned activities**
 
@@ -38,7 +38,7 @@ Our sponsor, Gerry, will act as the product owner. During Tuesday meetings (see 
 
 The development team will be responsible for designing, implementing, testing, and delivering tasks from the product backlog to the product owner. They will actively communicate with the product owner, as well as each other when any blockers arise.
 
-Within the development team, each team member will have focus areas relating the project, product or both: Tess Hacker (DevOps, Careparnter Dev), Ashton Michelstein (Cloud Dev), Alex Bruno (Caregiver Dev), Haroon Aziz (Frontend, Staff Dev), David Holt (Security Dev), and Jay Doody (Backend Dev). Features emerging for each of these focus areas will be defined by the development team and expanded on by the lead(s) of the respective focus areas (see Features below)
+Within the development team, each team member will have focus areas relating the project, product or both: Tess Hacker (DevOps, Carepartner Dev), Ashton Michelstein (Cloud Dev), Alex Bruno (Caregiver Dev), Haroon Aziz (Frontend, Staff Dev), David Holt (Security Dev), and Jay Doody (Backend Dev). Features emerging for each of these focus areas will be defined by the development team and expanded on by the lead(s) of the respective focus areas (see Features below)
 
 ### **Stakeholders**
 
@@ -52,13 +52,13 @@ Ann Marie is the CEO of Lifespan and is a fan of the product in theory. She woul
 
 ### **CI/CD Pipeline**
 
-A CI/CD pipeline will be established through GitHub to automatically build, test, and validate changes submitted to the project. The pipeline will run on pull requests and changes to designated branches to identify build failures and regressions early. Successful changes can then be deployed to the appropriate development or testing environments.
+GitHub Actions runs CI on every pull request into canary or main. Each part of the repo (server, caregiver and carepartner) is built, linted, type-checked and tested in its own job, and a pull request can't be merged until its checks pass. CI never deploys; deploys are done separately.
 
-Further internal tooling will be developed to support the development teams process. This will include AI scripts for consistent documentation (ticket descriptions, pull request descriptions, etc) and a Discord pull request bot that notifies the team when a pull request is created, merged, or a review is submitted.
+Internal tooling supports the team's process: AI scripts for consistent documentation (ticket and pull request descriptions), a Discord bot that notifies the team when a pull request is opened, merged or reviewed, and a nightly workflow that collects the data for our PR metrics (see Metrics and measurements below).
 
 ### **Code Reviews**
 
-All pull requests will go through a code review process with two phases. The pull request creator must review their code (manually or AI assisted) prior to publishing their pull request. Once a pull request is published, the creator will assign a reviewer, who will manually review and either approve it or request changes. One reviewer is required for feature branches merged into canary, while two are required for merges from canary to main (see Development Workflow below).
+All pull requests will go through a code review process with two phases. The pull request creator must review their code (manually or AI assisted) prior to publishing their pull request. Once a pull request is published, the creator will assign a reviewer, who will manually review and either approve it or request changes. One approval is required for feature branches merged into canary, while two are required for merges from canary to main (see Development Workflow below). GitHub enforces both, and GitHub Copilot also reviews every pull request into canary automatically.
 
 ### **Communication**
 
@@ -74,13 +74,13 @@ Git will be used for version control throughout development. GitHub will host th
 
 ### **GitHub Projects**
 
-A GitHub Projects board will be used to organize and track project tasks. We will use priorities and labels to group our tickets into focus areas (see Development Team above). The two major ticket types on the board will be tasks and bugs (which will be identifiable through labels). The board will be used to maintain visibility on features within the development team.
+A GitHub Projects board will be used to organize and track project tasks. We will use priorities and labels to group our tickets into focus areas (see Development Team above). Most tickets are tasks; bugs are marked with GitHub's Bug issue type. Tickets move through Product Backlog, Active Backlog, In Progress, In Review and Done, and a ticket waiting on something outside the team moves to Blocked. The board will be used to maintain visibility on features within the development team.
 
 ## **Metrics and measurements**
 
 ### **PR Metrics (Process)**
 
-We will track five PR metrics each deadline iteration. Together they keep PRs small, quick to review, spread authoring and reviewing across the team, keep focus-area experts involved in their areas, and make sure every member understands the whole system. The table below is an outline of these metrics and our internal website has the actual data:
+We will track five PR metrics each deadline iteration. Together they keep PRs small, quick to review, spread authoring and reviewing across the team, keep focus-area experts involved in their areas, and make sure every member understands the whole system. The table below is an outline of these metrics; [Process Metrics](Process%20Metrics.md) defines them in full, and our internal website has the actual data:
 
 | Metric | Target | Importance |
 | :---- | :---- | :---- |
@@ -103,9 +103,9 @@ The following assumptions can be made about our process to ensure these metrics 
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
 | **Devs** | Alex | Tess | Haroon | Jay | Tess & Haroon | Alex & Haroon | Ashton | David |
 
-### **Staff Feedback (Product)**
+### **Product Metrics**
 
-We will collect feedback from staff members and use it to evaluate whether the system meets the needs of carepartners. Feedback will be reviewed regularly and used to identify usability issues, missing functionality, device effectiveness, and any opportunities for improvement. Relevant feedback will result in new or modified backlog items. This cannot be tracked until we go into beta testing with St. Ann’s.
+Product metrics measure D.A.W.N. in use: how often staff rate a clip as helpful, how quickly staff can start a clip, how quickly it starts on the tablet, how often residents touch the tablet, and test coverage. [Product Metrics](Product%20Metrics.md) defines them. Most can only be tracked once we go into beta testing with St. Ann’s; results and staff feedback will result in new or modified backlog items.
 
 ## **Development Workflow**
 
@@ -131,7 +131,7 @@ If the change affects the UI, photos or videos will be added to the pull request
 
 ### **Google Drive**
 
-TODO
+The team's shared Google Drive holds meeting notes, agendas, 4Ups and course deliverables. The project artifacts (this document, the synopsis, requirements, feature list, metrics and diagrams) are version-controlled in the `dawn-care/Artifacts` repository instead.
 
 ### **Meeting Notes**
 
